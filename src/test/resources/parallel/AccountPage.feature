@@ -2,11 +2,10 @@
 Feature: My Account Page feature
 
 Background:
-
 Given User has already logged in to application
-|username | password |
-|qa.test@gmail.com	|validPassword@123|
-
+| username          | password         |
+|qa.test@gmail.com	|validPassword@123 |
+|qa.test3@gmail.com |validPassword@456 |
 
 Scenario: My Acconut Page Tittle
 Given user is on My Account page

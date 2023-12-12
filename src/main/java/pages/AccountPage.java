@@ -16,11 +16,9 @@ public class AccountPage {
 	private ElementUtils elementUtils;
 
 	public AccountPage(WebDriver driver) {
-
 		this.driver = driver;
 		PageFactory.initElements(driver, this);
 		elementUtils = new ElementUtils(driver);
-
 	}
 
 	@FindBy(xpath = "//h2[text()='My Account']")
@@ -28,8 +26,6 @@ public class AccountPage {
 
 	@FindBy(xpath = "//div[@id='content']//h2")
 	private List<WebElement> MyAccountSection;
-	
-	
 
 	@FindBy(linkText = "Edit your account information")
 	private WebElement editYourAccountInformationOption;
@@ -62,18 +58,14 @@ public class AccountPage {
 			accountList.add(text);
 		}
 		return accountList;
-
 	}
 
 	public boolean displayStatusOfEditYourAccountInformationOption() {
-
 		return elementUtils.displayStatusOfElement(editYourAccountInformationOption,
 				Constants.EXPLICIT_WAIT_BASIC_TIME);
-
 	}
+	
 	public String getAccountPageTitle() {
 		return driver.getTitle();
 	}
-	
-
 }

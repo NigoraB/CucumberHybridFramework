@@ -17,8 +17,7 @@ public class SearchResultsPage {
 		
 		this.driver = driver;
 		PageFactory.initElements(driver,this);
-		elementUtils = new ElementUtils(driver);
-		
+		elementUtils = new ElementUtils(driver);	
 	}
 	
 	@FindBy(linkText="HP LP3065")
@@ -27,16 +26,12 @@ public class SearchResultsPage {
 	@FindBy(xpath="//input[@id='button-search']/following-sibling::p")
 	private WebElement messageText;
 	
-	public boolean displayStatusOfValidProduct() {
-		
-		return elementUtils.displayStatusOfElement(validHPProduct,Constants.EXPLICIT_WAIT_BASIC_TIME);
-		
+	public boolean displayStatusOfValidProduct() {	
+		return elementUtils.displayStatusOfElement(validHPProduct,Constants.EXPLICIT_WAIT_BASIC_TIME);		
 	}
 	
-	public String getMessageText() {
-		
-		return elementUtils.getTextFromElement(messageText,Constants.EXPLICIT_WAIT_BASIC_TIME);
-		
+	public String getMessageText() {		
+		return elementUtils.getTextFromElement(messageText,Constants.EXPLICIT_WAIT_BASIC_TIME);		
 	}
 
 }

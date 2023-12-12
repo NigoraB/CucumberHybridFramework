@@ -2,6 +2,7 @@ package parallel;
 
 import java.util.Map;
 
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.testng.Assert;
 
@@ -58,7 +59,7 @@ public class RegisterPageSteps {
 		registerPage.enterTelephoneNumber(dataMap.get("telephone"));
 		registerPage.enterPassword(dataMap.get("password"));
 		registerPage.enterConfirmPassword(dataMap.get("password"));
-
+     // driver.findElement(By.id("input-firstname")).sendKeys(dataMap.get("firstName"));
 	}
 
 	@When("User selects Privacy Policy")

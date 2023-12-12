@@ -17,17 +17,13 @@ public class AccountSuccessPage {
 		
 		this.driver = driver;
 		PageFactory.initElements(driver,this);
-		elementUtils = new ElementUtils(driver);
-		
+		elementUtils = new ElementUtils(driver);	
 	}
 	
 	@FindBy(xpath="//div[@id='content']/h1")
 	private WebElement pageHeading;
 	
-	public String getPageHeading() {
-		
-		return elementUtils.getTextFromElement(pageHeading,Constants.EXPLICIT_WAIT_BASIC_TIME);
-		
+	public String getPageHeading() {	
+		return elementUtils.getTextFromElement(pageHeading,Constants.EXPLICIT_WAIT_BASIC_TIME);		
 	}
-
 }
