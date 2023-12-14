@@ -1,6 +1,3 @@
-/**
- * 
- */
 package parallel;
 
 import java.io.IOException;
@@ -10,18 +7,17 @@ import java.util.Map;
 import org.apache.poi.openxml4j.exceptions.InvalidFormatException;
 import org.testng.Assert;
 
-import factory.WebDriverFactory;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
+
+import factory.WebDriverFactory;
 import pages.ContactUsPage;
 import pages.HomePage;
 import utils.ExcelReader;
 
-/**
- * 
- */
 public class ContactUsPageSteps {
+//	private WebDriver driver;
 	private HomePage homePage;
 	private ContactUsPage contactUs;
 	private ExcelReader reader;
@@ -30,9 +26,9 @@ public class ContactUsPageSteps {
 
 	@Given("user navigates to contact us page")
 	public void user_navigates_to_contact_us_page() {
+
 		homePage = new HomePage(WebDriverFactory.getDriver());
 		contactUs = homePage.navigateToContactUsPage();
-
 	}
 
 	@When("user fills the form from the given sheetname {string} and {int}")
@@ -57,7 +53,8 @@ public class ContactUsPageSteps {
 	public void it_shows_an_error_message() {
 
 		String actualWarning = contactUs.getWarningMessage();
-		System.out.println("Actual warning message:  \n"+ actualWarning + "\nExpected warning message: " +  expectedMessage);
+		System.out.println(
+				"Actual warning message:  \n" + actualWarning + "\nExpected warning message: " + expectedMessage);
 		Assert.assertEquals(actualWarning, expectedMessage);
 
 	}

@@ -10,7 +10,7 @@ import utils.ElementUtils;
 
 public class SearchResultsPage {
 	
-	WebDriver driver;
+	private WebDriver driver;
 	private ElementUtils elementUtils;
 	
 	public SearchResultsPage(WebDriver driver) {

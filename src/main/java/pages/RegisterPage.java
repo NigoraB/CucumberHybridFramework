@@ -10,7 +10,7 @@ import utils.ElementUtils;
 
 public class RegisterPage {
 	
-	WebDriver driver;
+	private WebDriver driver;
 	private ElementUtils elementUtils;
 	
 	public RegisterPage(WebDriver driver) {

@@ -10,7 +10,7 @@ import utils.ElementUtils;
 
 public class LoginPage {
 
-	WebDriver driver;
+	private WebDriver driver;
 	private ElementUtils elementUtils;
 
 	public LoginPage(WebDriver driver) {

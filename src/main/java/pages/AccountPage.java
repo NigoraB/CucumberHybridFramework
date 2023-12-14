@@ -12,7 +12,7 @@ import utils.ElementUtils;
 
 public class AccountPage {
 
-	WebDriver driver;
+	private WebDriver driver;
 	private ElementUtils elementUtils;
 
 	public AccountPage(WebDriver driver) {

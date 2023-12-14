@@ -1,12 +1,14 @@
-/**
- * 
- */
 package factory;
 
+import java.time.Duration;
+
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebDriverException;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.safari.SafariDriver;
+
+import constants.Constants;
 
 /**
  * ThreadLocal concept for parallel execution This method is used to initialize
@@ -16,26 +18,34 @@ import org.openqa.selenium.safari.SafariDriver;
  * @return this will return tlDriver
  */
 public class WebDriverFactory {
-	public WebDriver driver;
-	public static ThreadLocal<WebDriver> tlDriver = new ThreadLocal<>();
 
-	public WebDriver initializeBrowser(String browserName) {
+	private static ThreadLocal<WebDriver> tlDriver = new ThreadLocal<>();
 
-		System.out.println();
-		if (browserName.equals("chrome")) {
-			tlDriver.set(new ChromeDriver());// when ChromeDriver initialized, it will set with tlDriver. it will create
-												// local driver copy for the specific thread
-		} else if (browserName.equals("firefox")) {
-			tlDriver.set(new FirefoxDriver());
-		} else if (browserName.equals("safari")) {
-			tlDriver.set(new SafariDriver());
-		} else {
-			System.out.println("Please pass the correct browser value");
+	public static WebDriver initializeBrowser(String browserName) {
 
+		try {
+			if (browserName.equalsIgnoreCase("chrome")) {
+				tlDriver.set(new ChromeDriver()); // when ChromeDriver initialized, it will set with tlDriver. it will
+													// create local driver copy for the specific thread
+			} else if (browserName.equalsIgnoreCase("firefox")) {
+				tlDriver.set(new FirefoxDriver());
+			} else if (browserName.equalsIgnoreCase("safari")) {
+				tlDriver.set(new SafariDriver());
+			} else {
+				throw new WebDriverException("Unsupported browser: " + browserName);
+
+			}
+
+			WebDriver driver = getDriver();
+			driver.manage().deleteAllCookies();
+			driver.manage().window().maximize();
+			driver.manage().timeouts().pageLoadTimeout(Duration.ofSeconds(Constants.PAIGE_LOAD_TIME));
+			driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(Constants.IMPLICIT_WAIT_TIME));
+			return driver;
+		} catch (Exception e) {
+			// Handle the exception (log, throw, or handle as appropriate)
+			throw new RuntimeException("Failed to initialize the browser", e);
 		}
-		getDriver().manage().deleteAllCookies();
-		getDriver().manage().window().maximize();
-		return getDriver();
 	}
 
 	/**
@@ -45,6 +55,14 @@ public class WebDriverFactory {
 	 */
 	public static synchronized WebDriver getDriver() {
 		return tlDriver.get();
+	}
+
+	public static void quitDriver() {
+		WebDriver driver = tlDriver.get();
+		if (driver != null) {
+			driver.quit();
+			tlDriver.remove();
+		}
 	}
 
 }

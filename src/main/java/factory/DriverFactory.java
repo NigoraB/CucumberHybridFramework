@@ -9,13 +9,12 @@ import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.safari.SafariDriver;
 
 import constants.Constants;
-import utils.CommonUtils;
 
 public class DriverFactory {
 	
-	static WebDriver driver = null;
+	 private WebDriver driver = null;
 	
-	public static WebDriver initializeBrowser(String browserName) {
+	public  WebDriver initializeBrowser(String browserName) {
 		
 		if(browserName.equals("chrome")) {
 			
@@ -44,7 +43,7 @@ public class DriverFactory {
 		
 	}
 	
-	public static WebDriver getDriver() {
+	public  WebDriver getDriver() {
 		
 		return driver;
 		

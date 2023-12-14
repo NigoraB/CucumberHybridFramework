@@ -10,7 +10,7 @@ import utils.ElementUtils;
 
 public class AccountSuccessPage {
 	
-	WebDriver driver;
+	private WebDriver driver;
 	private ElementUtils elementUtils;
 	
 	public AccountSuccessPage(WebDriver driver) {

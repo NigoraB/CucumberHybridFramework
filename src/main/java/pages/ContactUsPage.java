@@ -13,7 +13,7 @@ import utils.ElementUtils;
 
 public class ContactUsPage {
 
-	WebDriver driver;
+	private WebDriver driver;
 	private ElementUtils elementUtils;
 
 	public ContactUsPage(WebDriver driver) {

@@ -19,7 +19,7 @@ import utils.CommonUtils;
 
 public class RegisterPageSteps {
 
-	WebDriver driver;
+	private WebDriver driver;
 	private RegisterPage registerPage;
 	private AccountSuccessPage accountSuccessPage;
 	private CommonUtils commonUtils;
@@ -30,7 +30,6 @@ public class RegisterPageSteps {
 
 		homePage = new HomePage(WebDriverFactory.getDriver());
 		registerPage = homePage.navigateToRegisterAccountPage();
-
 	}
 
 	@When("User enters the details into below fields")
@@ -45,7 +44,6 @@ public class RegisterPageSteps {
 		registerPage.enterTelephoneNumber(dataMap.get("telephone"));
 		registerPage.enterPassword(dataMap.get("password"));
 		registerPage.enterConfirmPassword(dataMap.get("password"));
-
 	}
 
 	@When("User enters the details into below fields with duplicate email")
@@ -59,35 +57,31 @@ public class RegisterPageSteps {
 		registerPage.enterTelephoneNumber(dataMap.get("telephone"));
 		registerPage.enterPassword(dataMap.get("password"));
 		registerPage.enterConfirmPassword(dataMap.get("password"));
-     // driver.findElement(By.id("input-firstname")).sendKeys(dataMap.get("firstName"));
+		// driver.findElement(By.id("input-firstname")).sendKeys(dataMap.get("firstName"));
 	}
 
 	@When("User selects Privacy Policy")
 	public void user_selects_privacy_policy() {
 
 		registerPage.selectPrivacyPolicy();
-
 	}
 
 	@When("User clicks on Continue button")
 	public void user_clicks_on_continue_button() {
 
 		accountSuccessPage = registerPage.clickOnContinueButton();
-
 	}
 
 	@Then("User account should get created successfully")
 	public void user_account_should_get_created_successfully() {
 
 		Assert.assertEquals("Your Account Has Been Created!", accountSuccessPage.getPageHeading());
-
 	}
 
 	@When("User selects Yes for Newsletter")
 	public void user_selects_yes_for_newsletter() {
 
 		registerPage.selectYesNewsletterOption();
-
 	}
 
 	@Then("User should get a proper warning about duplicate email")
@@ -95,7 +89,6 @@ public class RegisterPageSteps {
 
 		Assert.assertTrue(
 				registerPage.getWarningMessageText().contains("Warning: E-Mail Address is already registered!"));
-
 	}
 
 	@When("User dont enter any details into fields")
@@ -107,7 +100,6 @@ public class RegisterPageSteps {
 		registerPage.enterTelephoneNumber("");
 		registerPage.enterPassword("");
 		registerPage.enterConfirmPassword("");
-
 	}
 
 	@Then("User should get proper warning messages for every mandatory field")
@@ -120,7 +112,5 @@ public class RegisterPageSteps {
 		Assert.assertEquals("E-Mail Address does not appear to be valid!", registerPage.getEmailWarning());
 		Assert.assertEquals("Telephone must be between 3 and 32 characters!", registerPage.getTelephoneWarning());
 		Assert.assertEquals("Password must be between 4 and 20 characters!", registerPage.getPasswordWarning());
-
 	}
-
 }

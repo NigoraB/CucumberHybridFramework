@@ -40,5 +40,23 @@ public class CommonUtils {
 		DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyyMMdd_HHmmss");
 		return "test" + now.format(formatter) + "@gmail.com";
 	}
+	
+	public static String generateRandomEmail() {
+        String[] domains = {"gmail.com", "yahoo.com", "hotmail.com", "outlook.com", "example.com"};
+        String[] firstName = {"john", "emma", "james", "sophia", "william", "olivia"};
+        String[] lastName = {"smith", "johnson", "brown", "lee", "wilson", "martin"};
+
+        Random random = new Random();
+
+        String randomFirstName = firstName[random.nextInt(firstName.length)];
+        String randomLastName = lastName[random.nextInt(lastName.length)];
+        String randomDomain = domains[random.nextInt(domains.length)];
+
+        int randomNumber = random.nextInt(1000); // Generating a random number
+
+        return randomFirstName + "." + randomLastName + randomNumber + "@" + randomDomain;
+    }
+	
+	
 
 }

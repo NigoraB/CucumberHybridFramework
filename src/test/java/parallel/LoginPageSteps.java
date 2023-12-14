@@ -1,9 +1,7 @@
 package parallel;
 
-import org.openqa.selenium.WebDriver;
 import org.testng.Assert;
 
-import factory.DriverFactory;
 import factory.WebDriverFactory;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
@@ -16,15 +14,15 @@ import utils.CommonUtils;
 
 public class LoginPageSteps {
 
-	WebDriver driver;
 	private LoginPage loginPage;
 	private AccountPage accountPage;
+	private HomePage homePage;
 	private CommonUtils commonUtils;
 
 	@Given("User navigates to login page")
 	public void user_navigates_to_login_page() {
 
-		HomePage homePage = new HomePage(WebDriverFactory.getDriver());
+		homePage = new HomePage(WebDriverFactory.getDriver());
 		loginPage = homePage.navigateToLoginPage();
 	}
 

@@ -20,9 +20,10 @@ import pages.LoginPage;
 
 public class AccountPageSteps {
 	private static String title;
-	WebDriver driver;
+	private WebDriver driver;
 	private LoginPage loginPage;
 	private AccountPage accountPage;
+	
 
 	@Given("User has already logged in to application")
 	public void user_has_already_logged_in_to_application(DataTable credTable) {

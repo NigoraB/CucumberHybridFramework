@@ -14,21 +14,21 @@ import utils.ConfigReader;
 
 public class ApplicationHooks {
 
-	private WebDriver driver;
-	private WebDriverFactory driverFactory;
+	WebDriver driver;
 	private ConfigReader configReader;
 	private Properties prop;
 
 	@Before(order = 0)
 	public void getProperty() {
+
 		configReader = new ConfigReader();
 		prop = configReader.intializeProperties();
 	}
 
 	@Before(order = 1)
 	public void launchBrowser() {
-		driverFactory = new WebDriverFactory();
-		driver = driverFactory.initializeBrowser(prop.getProperty("browser"));
+
+		driver = WebDriverFactory.initializeBrowser(prop.getProperty("browser"));
 		driver.get(prop.getProperty("url"));
 	}
 
@@ -43,8 +43,7 @@ public class ApplicationHooks {
 			scenario.attach(srcScreenshot, "image/png", scenarioName);
 		}
 
-		driver.quit();
-
+		WebDriverFactory.quitDriver();
 	}
 
 }

@@ -10,7 +10,7 @@ import utils.ElementUtils;
 
 public class HomePage {
 	
-	WebDriver driver;
+	private WebDriver driver;
 	private ElementUtils elementUtils;
 	
 	public HomePage(WebDriver driver) {
