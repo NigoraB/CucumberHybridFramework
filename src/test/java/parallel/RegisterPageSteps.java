@@ -19,7 +19,6 @@ import utils.CommonUtils;
 
 public class RegisterPageSteps {
 
-	private WebDriver driver;
 	private RegisterPage registerPage;
 	private AccountSuccessPage accountSuccessPage;
 	private CommonUtils commonUtils;

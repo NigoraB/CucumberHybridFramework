@@ -16,19 +16,19 @@ public class DriverFactory {
 	
 	public  WebDriver initializeBrowser(String browserName) {
 		
-		if(browserName.equals("chrome")) {
+		if(browserName.equalsIgnoreCase("chrome")) {
 			
 			driver = new ChromeDriver();
 			
-		}else if(browserName.equals("firefox")) {
+		}else if(browserName.equalsIgnoreCase("firefox")) {
 			
 			driver = new FirefoxDriver();
 			
-		}else if(browserName.equals("edge")) {
+		}else if(browserName.equalsIgnoreCase("edge")) {
 			
 			driver = new EdgeDriver();
 			
-		}else if(browserName.equals("safari")) {
+		}else if(browserName.equalsIgnoreCase("safari")) {
 			
 			driver = new SafariDriver();
 			
@@ -45,8 +45,14 @@ public class DriverFactory {
 	
 	public  WebDriver getDriver() {
 		
-		return driver;
-		
+		return driver;	
 	}
+	
+	public void quitDriver() {
+		WebDriver driver = getDriver();
+		if (driver != null) {
+			driver.quit();
+		}
 
+}
 }

@@ -62,7 +62,7 @@ public class AccountPage {
 
 	public boolean displayStatusOfEditYourAccountInformationOption() {
 		return elementUtils.displayStatusOfElement(editYourAccountInformationOption,
-				Constants.EXPLICIT_WAIT_BASIC_TIME);
+				Constants.EXPLICIT_WAIT_TIME);
 	}
 	
 	public String getAccountPageTitle() {

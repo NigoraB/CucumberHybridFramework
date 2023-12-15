@@ -49,42 +49,42 @@ public class ContactUsPage {
 	// Actions
 
 	public void enterYourName(String name) {
-		elementUtils.typeTextIntoElement(yourNameField, name, Constants.EXPLICIT_WAIT_BASIC_TIME);
+		elementUtils.typeTextIntoElement(yourNameField, name, Constants.EXPLICIT_WAIT_TIME);
 	}
 
 	public void enterYourEmail(String email) {
-		elementUtils.typeTextIntoElement(emailAddressField, email, Constants.EXPLICIT_WAIT_BASIC_TIME);
+		elementUtils.typeTextIntoElement(emailAddressField, email, Constants.EXPLICIT_WAIT_TIME);
 	}
 
 	public void enterEnquiry(String text) {
-		elementUtils.typeTextIntoElement(enquiryField, text, Constants.EXPLICIT_WAIT_BASIC_TIME);
+		elementUtils.typeTextIntoElement(enquiryField, text, Constants.EXPLICIT_WAIT_TIME);
 	}
 
 	public ContactUsPage clickSubmitBtn() {
-		elementUtils.clickOnElement(submitBtn, Constants.EXPLICIT_WAIT_BASIC_TIME);
+		elementUtils.clickOnElement(submitBtn, Constants.EXPLICIT_WAIT_TIME);
 		return new ContactUsPage(driver);
 	}
 
 	public void fillContactUsForm(String name, String email, String text) {
-		elementUtils.typeTextIntoElement(yourNameField, name, Constants.EXPLICIT_WAIT_BASIC_TIME);
-		elementUtils.typeTextIntoElement(emailAddressField, email, Constants.EXPLICIT_WAIT_BASIC_TIME);
-		elementUtils.typeTextIntoElement(enquiryField, text, Constants.EXPLICIT_WAIT_BASIC_TIME);
+		elementUtils.typeTextIntoElement(yourNameField, name, Constants.EXPLICIT_WAIT_TIME);
+		elementUtils.typeTextIntoElement(emailAddressField, email, Constants.EXPLICIT_WAIT_TIME);
+		elementUtils.typeTextIntoElement(enquiryField, text, Constants.EXPLICIT_WAIT_TIME);
 	}
 
 	public String getEnquiryWarningMessage() {
-		return elementUtils.getTextFromElement(enquiryWarningMessage, Constants.EXPLICIT_WAIT_BASIC_TIME);
+		return elementUtils.getTextFromElement(enquiryWarningMessage, Constants.EXPLICIT_WAIT_TIME);
 	}
 
 	public String getNameWarningMessage() {
-		return elementUtils.getTextFromElement(nameWarningMessage, Constants.EXPLICIT_WAIT_BASIC_TIME);
+		return elementUtils.getTextFromElement(nameWarningMessage, Constants.EXPLICIT_WAIT_TIME);
 	}
 
 	public String getEmailWarningMessage() {
-		return elementUtils.getTextFromElement(emailWarningMessage, Constants.EXPLICIT_WAIT_BASIC_TIME);
+		return elementUtils.getTextFromElement(emailWarningMessage, Constants.EXPLICIT_WAIT_TIME);
 	}
 
 	public String getWarningMessage() {
-		return elementUtils.getTextFromElement(warningMessage, Constants.EXPLICIT_WAIT_BASIC_TIME);
+		return elementUtils.getTextFromElement(warningMessage, Constants.EXPLICIT_WAIT_TIME);
 	}
 
 }

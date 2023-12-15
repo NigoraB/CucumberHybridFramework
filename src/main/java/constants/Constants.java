@@ -7,7 +7,7 @@ public class Constants {
 	
 	public static final int IMPLICIT_WAIT_TIME = 10;
 	public static final int PAIGE_LOAD_TIME = 15;
-	public static final int EXPLICIT_WAIT_BASIC_TIME=30;
+	public static final int EXPLICIT_WAIT_TIME=30;
 
 	public static final String LOGIN_PAGE_TITLE_VALUE = "Account Login";
 	public static final String LOGIN_PAGE_URL_FRACTION_VALUE = "route=account/login";

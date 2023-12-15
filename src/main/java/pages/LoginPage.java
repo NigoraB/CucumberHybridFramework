@@ -35,34 +35,34 @@ public class LoginPage {
 
 	public void enterEmailAddress(String emailText) {
 
-		elementUtils.typeTextIntoElement(emailField, emailText, Constants.EXPLICIT_WAIT_BASIC_TIME);
+		elementUtils.typeTextIntoElement(emailField, emailText, Constants.EXPLICIT_WAIT_TIME);
 
 	}
 
 	public void enterPassword(String passwordText) {
 
-		elementUtils.typeTextIntoElement(passwordField, passwordText, Constants.EXPLICIT_WAIT_BASIC_TIME);
+		elementUtils.typeTextIntoElement(passwordField, passwordText, Constants.EXPLICIT_WAIT_TIME);
 
 	}
 
 	public AccountPage clickOnLoginButton() {
 
-		elementUtils.clickOnElement(loginButton, Constants.EXPLICIT_WAIT_BASIC_TIME);
-		return new AccountPage(driver);
+		elementUtils.clickOnElement(loginButton, Constants.EXPLICIT_WAIT_TIME);
+		return new AccountPage(this.driver);
 
 	}
 
 	public String getWarningMessageText() {
 
-		return elementUtils.getTextFromElement(warningMessage, Constants.EXPLICIT_WAIT_BASIC_TIME);
+		return elementUtils.getTextFromElement(warningMessage, Constants.EXPLICIT_WAIT_TIME);
 
 	}
 
 	public AccountPage doLogin(String emailText, String passwordText) {
-		elementUtils.typeTextIntoElement(emailField, emailText, Constants.EXPLICIT_WAIT_BASIC_TIME);
-		elementUtils.typeTextIntoElement(passwordField, passwordText, Constants.EXPLICIT_WAIT_BASIC_TIME);
-		elementUtils.clickOnElement(loginButton, Constants.EXPLICIT_WAIT_BASIC_TIME);
-		return new AccountPage(driver);
+		elementUtils.typeTextIntoElement(emailField, emailText, Constants.EXPLICIT_WAIT_TIME);
+		elementUtils.typeTextIntoElement(passwordField, passwordText, Constants.EXPLICIT_WAIT_TIME);
+		elementUtils.clickOnElement(loginButton, Constants.EXPLICIT_WAIT_TIME);
+		return new AccountPage(this.driver);
 
 	}
 

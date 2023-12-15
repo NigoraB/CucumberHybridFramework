@@ -27,11 +27,11 @@ public class SearchResultsPage {
 	private WebElement messageText;
 	
 	public boolean displayStatusOfValidProduct() {	
-		return elementUtils.displayStatusOfElement(validHPProduct,Constants.EXPLICIT_WAIT_BASIC_TIME);		
+		return elementUtils.displayStatusOfElement(validHPProduct,Constants.EXPLICIT_WAIT_TIME);		
 	}
 	
 	public String getMessageText() {		
-		return elementUtils.getTextFromElement(messageText,Constants.EXPLICIT_WAIT_BASIC_TIME);		
+		return elementUtils.getTextFromElement(messageText,Constants.EXPLICIT_WAIT_TIME);		
 	}
 
 }

@@ -13,7 +13,11 @@ import constants.Constants;
 /**
  * ThreadLocal concept for parallel execution This method is used to initialize
  * the threadlocal driver on the basis of given browser
- * 
+ * ThreadLocal<WebDriver> is used to create and manage separate instances of WebDriver for each thread, 
+ * ensuring thread safety and preventing interference between parallel test executions.
+ * In parallel test execution, multiple test cases may run concurrently in different threads.
+ * Using a shared WebDriver instance across threads can lead to synchronization issues and unintended interactions between tests.
+ * ThreadLocal allows each thread to have its own isolated WebDriver instance, avoiding thread-safety problems.
  * @param browser
  * @return this will return tlDriver
  */

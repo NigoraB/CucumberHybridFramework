@@ -39,51 +39,51 @@ public class HomePage {
 	
 	public void clickOnMyAccount() {
 		
-		elementUtils.clickOnElement(myAccountDropMenu,Constants.EXPLICIT_WAIT_BASIC_TIME);
+		elementUtils.clickOnElement(myAccountDropMenu,Constants.EXPLICIT_WAIT_TIME);
 		
 	}
 	
 	public LoginPage selectLoginOption() {
 		
-		elementUtils.clickOnElement(loginOption,Constants.EXPLICIT_WAIT_BASIC_TIME);
-		return new LoginPage(driver);
+		elementUtils.clickOnElement(loginOption,Constants.EXPLICIT_WAIT_TIME);
+		return new LoginPage(this.driver);
 		
 	}
 	
 	public LoginPage navigateToLoginPage() {
-		elementUtils.clickOnElement(myAccountDropMenu,Constants.EXPLICIT_WAIT_BASIC_TIME);
-		elementUtils.clickOnElement(loginOption,Constants.EXPLICIT_WAIT_BASIC_TIME);
-		return new LoginPage(driver);
+		elementUtils.clickOnElement(myAccountDropMenu,Constants.EXPLICIT_WAIT_TIME);
+		elementUtils.clickOnElement(loginOption,Constants.EXPLICIT_WAIT_TIME);
+		return new LoginPage(this.driver);
 	}
 	
 	public RegisterPage navigateToRegisterAccountPage() {
-		elementUtils.clickOnElement(myAccountDropMenu,Constants.EXPLICIT_WAIT_BASIC_TIME);
-		elementUtils.clickOnElement(registerOption,Constants.EXPLICIT_WAIT_BASIC_TIME);
-		return new RegisterPage(driver);	
+		elementUtils.clickOnElement(myAccountDropMenu,Constants.EXPLICIT_WAIT_TIME);
+		elementUtils.clickOnElement(registerOption,Constants.EXPLICIT_WAIT_TIME);
+		return new RegisterPage(this.driver);	
 	}
 	
 	public ContactUsPage navigateToContactUsPage() {
-		elementUtils.clickOnElement(contactUsLink, Constants.EXPLICIT_WAIT_BASIC_TIME);
-		return new ContactUsPage(driver);
+		elementUtils.clickOnElement(contactUsLink, Constants.EXPLICIT_WAIT_TIME);
+		return new ContactUsPage(this.driver);
 	}
 	
 	public RegisterPage selectRegisterOption() {
 		
-		elementUtils.clickOnElement(registerOption,Constants.EXPLICIT_WAIT_BASIC_TIME);
-		return new RegisterPage(driver);
+		elementUtils.clickOnElement(registerOption,Constants.EXPLICIT_WAIT_TIME);
+		return new RegisterPage(this.driver);
 		
 	}
 	
 	public void enterProductIntoSearchBox(String productText) {
 		
-		elementUtils.typeTextIntoElement(searchBoxField,productText,Constants.EXPLICIT_WAIT_BASIC_TIME);
+		elementUtils.typeTextIntoElement(searchBoxField,productText,Constants.EXPLICIT_WAIT_TIME);
 		
 	}
 	
 	public SearchResultsPage clickOnSearchButton() {
 		
-		elementUtils.clickOnElement(searchButton,Constants.EXPLICIT_WAIT_BASIC_TIME);
-		return new SearchResultsPage(driver);
+		elementUtils.clickOnElement(searchButton,Constants.EXPLICIT_WAIT_TIME);
+		return new SearchResultsPage(this.driver);
 		
 	}
 	

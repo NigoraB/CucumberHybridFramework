@@ -68,92 +68,92 @@ public class RegisterPage {
 	
 	public void enterFirstName(String firstNameText) {
 		
-		elementUtils.typeTextIntoElement(firstNameField, firstNameText,Constants.EXPLICIT_WAIT_BASIC_TIME);
+		elementUtils.typeTextIntoElement(firstNameField, firstNameText,Constants.EXPLICIT_WAIT_TIME);
 		
 	}
 	
 	public void enterLastName(String lastNameText) {
 		
-		elementUtils.typeTextIntoElement(lastNameField, lastNameText,Constants.EXPLICIT_WAIT_BASIC_TIME);
+		elementUtils.typeTextIntoElement(lastNameField, lastNameText,Constants.EXPLICIT_WAIT_TIME);
 		
 	}
 	
 	public void enterEmailAddress(String emailText) {
 		
-		elementUtils.typeTextIntoElement(emailField, emailText,Constants.EXPLICIT_WAIT_BASIC_TIME);
+		elementUtils.typeTextIntoElement(emailField, emailText,Constants.EXPLICIT_WAIT_TIME);
 		
 	}
 	
 	public void enterTelephoneNumber(String telephoneText) {
 		
-		elementUtils.typeTextIntoElement(telephoneField, telephoneText,Constants.EXPLICIT_WAIT_BASIC_TIME);
+		elementUtils.typeTextIntoElement(telephoneField, telephoneText,Constants.EXPLICIT_WAIT_TIME);
 		
 	}
 	
 	public void enterPassword(String passwordText) {
 		
-		elementUtils.typeTextIntoElement(passwordField, passwordText,Constants.EXPLICIT_WAIT_BASIC_TIME);
+		elementUtils.typeTextIntoElement(passwordField, passwordText,Constants.EXPLICIT_WAIT_TIME);
 		
 	}
 	
 	public void enterConfirmPassword(String passwordText) {
 		
-		elementUtils.typeTextIntoElement(passwordConfirmField, passwordText,Constants.EXPLICIT_WAIT_BASIC_TIME);
+		elementUtils.typeTextIntoElement(passwordConfirmField, passwordText,Constants.EXPLICIT_WAIT_TIME);
 		
 	}
 	
 	public void selectPrivacyPolicy() {
 		
-		elementUtils.clickOnElement(privacyPolicyOption,Constants.EXPLICIT_WAIT_BASIC_TIME);
+		elementUtils.clickOnElement(privacyPolicyOption,Constants.EXPLICIT_WAIT_TIME);
 		
 	}
 	
 	public AccountSuccessPage clickOnContinueButton() {
 		
-		elementUtils.clickOnElement(continueButton,Constants.EXPLICIT_WAIT_BASIC_TIME);
-		return new AccountSuccessPage(driver);
+		elementUtils.clickOnElement(continueButton,Constants.EXPLICIT_WAIT_TIME);
+		return new AccountSuccessPage(this.driver);
 		
 	}
 	
 	public void selectYesNewsletterOption() {
 		
-		elementUtils.clickOnElement(YesNewsletterOption,Constants.EXPLICIT_WAIT_BASIC_TIME);
+		elementUtils.clickOnElement(YesNewsletterOption,Constants.EXPLICIT_WAIT_TIME);
 		
 	}
 	
 	public String getWarningMessageText() {
 		
-		return elementUtils.getTextFromElement(warningMessage,Constants.EXPLICIT_WAIT_BASIC_TIME);
+		return elementUtils.getTextFromElement(warningMessage,Constants.EXPLICIT_WAIT_TIME);
 		
 	}
 	
 	public String getFirstNameWarning() {
 		
-		return elementUtils.getTextFromElement(firstNameWarning,Constants.EXPLICIT_WAIT_BASIC_TIME);
+		return elementUtils.getTextFromElement(firstNameWarning,Constants.EXPLICIT_WAIT_TIME);
 		
 	}
 	
 	public String getLastNameWarning() {
 		
-		return elementUtils.getTextFromElement(lastNameWaring,Constants.EXPLICIT_WAIT_BASIC_TIME);
+		return elementUtils.getTextFromElement(lastNameWaring,Constants.EXPLICIT_WAIT_TIME);
 		
 	}
 	
 	public String getEmailWarning() {
 		
-		return elementUtils.getTextFromElement(emailWarning,Constants.EXPLICIT_WAIT_BASIC_TIME);
+		return elementUtils.getTextFromElement(emailWarning,Constants.EXPLICIT_WAIT_TIME);
 		
 	}
 	
 	public String getTelephoneWarning() {
 		
-		return elementUtils.getTextFromElement(telephoneWarning,Constants.EXPLICIT_WAIT_BASIC_TIME);
+		return elementUtils.getTextFromElement(telephoneWarning,Constants.EXPLICIT_WAIT_TIME);
 		
 	}
 	
 	public String getPasswordWarning() {
 		
-		return elementUtils.getTextFromElement(passwordWarning,Constants.EXPLICIT_WAIT_BASIC_TIME);
+		return elementUtils.getTextFromElement(passwordWarning,Constants.EXPLICIT_WAIT_TIME);
 		
 	}
 	
